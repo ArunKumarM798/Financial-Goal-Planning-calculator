@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Financial Goal Planning Calculator</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; }
     .calculator-container {
@@ -102,7 +102,11 @@
         },
         options: {
           responsive: true,
-          legend: { position: 'top' }
+          plugins: {
+            legend: {
+              position: 'top'
+            }
+          }
         }
       });
     }
