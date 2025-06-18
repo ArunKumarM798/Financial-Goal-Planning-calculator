@@ -47,7 +47,7 @@
         <div class="results mt-6 sm:mt-8 p-4 sm:p-6 bg-gray-50 rounded-lg shadow-inner hidden" id="results">
             <p id="displayInflatedGoal" class="text-base sm:text-xl text-gray-800 mb-1 sm:mb-2"></p>
             <p id="displayMonthlyInvestment" class="text-base sm:text-xl text-gray-800 mb-2 sm:mb-4"></p>
-            <canvas id="goalChart" class="mt-4 sm:mt-6"></canvas>
+            <canvas id="goalChart" class="mt-2 sm:mt-4"></canvas>
         </div>
     </div>
 
@@ -127,14 +127,16 @@
                         position: 'bottom',
                         labels: {
                             fontColor: '#374151', // Gray-700
-                            fontSize: 12 // Decreased font size for legend
+                            fontSize: 12, // Decreased font size for legend
+                            padding: 0 // Decreased padding for legend labels
                         }
                     },
                     title: {
                         display: true,
                         text: 'Investment Contribution vs. Goal',
                         fontSize: 16, // Decreased font size for title
-                        fontColor: '#1F2937' // Gray-900
+                        fontColor: '#1F2937', // Gray-900
+                        padding: 8 // Decreased padding for title
                     },
                     tooltips: {
                         callbacks: {
