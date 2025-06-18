@@ -18,35 +18,35 @@
 </head>
 <body class="bg-gray-100 p-2 font-sans">
     <div class="calculator-container bg-white shadow-lg rounded-xl p-6 max-w-lg w-full mx-auto sm:p-8">
-        <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-5 sm:mb-6">Financial Goal Planning Calculator</h2>
+        <h2 class="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-5 sm:mb-6">Financial Goal Planning Calculator</h2>
 
         <div class="space-y-3 sm:space-y-4 mb-5 sm:mb-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <label for="goalAmount" class="text-gray-700 text-base sm:text-lg sm:w-1/2">Future Goal Amount (₹):</label>
-                <input type="number" id="goalAmount" value="100000" autofocus class="flex-grow p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base sm:text-lg sm:w-1/2">
+                <label for="goalAmount" class="text-sm sm:text-base text-gray-700 sm:w-1/2">Future Goal Amount (₹):</label>
+                <input type="number" id="goalAmount" value="100000" autofocus class="flex-grow p-2 sm:p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base sm:text-base sm:w-1/2">
             </div>
             <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <label for="inflationRate" class="text-gray-700 text-base sm:text-lg sm:w-1/2">Rate of Inflation (p.a.) (%):</label>
-                <input type="number" id="inflationRate" value="8" step="0.1" class="flex-grow p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base sm:text-lg sm:w-1/2">
+                <label for="inflationRate" class="text-sm sm:text-base text-gray-700 sm:w-1/2">Rate of Inflation (p.a.) (%):</label>
+                <input type="number" id="inflationRate" value="8" step="0.1" class="flex-grow p-2 sm:p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base sm:text-base sm:w-1/2">
             </div>
             <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <label for="years" class="text-gray-700 text-base sm:text-lg sm:w-1/2">Time Period (Years):</label>
-                <input type="number" id="years" value="10" class="flex-grow p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base sm:text-lg sm:w-1/2">
+                <label for="years" class="text-sm sm:text-base text-gray-700 sm:w-1/2">Time Period (Years):</label>
+                <input type="number" id="years" value="10" class="flex-grow p-2 sm:p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base sm:text-base sm:w-1/2">
             </div>
             <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-                <label for="returnRate" class="text-gray-700 text-base sm:text-lg sm:w-1/2">Returns on Savings (p.a.) (%):</label>
-                <input type="number" id="returnRate" value="6" step="0.1" class="flex-grow p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base sm:text-lg sm:w-1/2">
+                <label for="returnRate" class="text-sm sm:text-base text-gray-700 sm:w-1/2">Returns on Savings (p.a.) (%):</label>
+                <input type="number" id="returnRate" value="6" step="0.1" class="flex-grow p-2 sm:p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base sm:text-base sm:w-1/2">
             </div>
         </div>
 
-        <button onclick="calculateGoal()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 sm:py-3 px-4 rounded-lg transition duration-300 ease-in-out text-lg sm:text-xl">
+        <button onclick="calculateGoal()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 sm:py-2.5 px-4 rounded-lg transition duration-300 ease-in-out text-base sm:text-lg">
             Calculate
         </button>
 
         <!-- Use Tailwind's hidden class for robust hiding -->
         <div class="results mt-6 sm:mt-8 p-4 sm:p-6 bg-gray-50 rounded-lg shadow-inner hidden" id="results">
-            <p id="displayInflatedGoal" class="text-base sm:text-xl text-gray-800 mb-1 sm:mb-2"></p>
-            <p id="displayMonthlyInvestment" class="text-base sm:text-xl text-gray-800 mb-2 sm:mb-4"></p>
+            <p id="displayInflatedGoal" class="text-base sm:text-lg text-gray-800 mb-1 sm:mb-2"></p>
+            <p id="displayMonthlyInvestment" class="text-base sm:text-lg text-gray-800 mb-2 sm:mb-4"></p>
             <canvas id="goalChart" class="mt-2 sm:mt-4"></canvas>
         </div>
     </div>
@@ -127,16 +127,16 @@
                         position: 'bottom',
                         labels: {
                             fontColor: '#374151', // Gray-700
-                            fontSize: 12, // Decreased font size for legend
-                            padding: 0 // Decreased padding for legend labels
+                            fontSize: 10, // Adjusted font size for legend
+                            padding: 0
                         }
                     },
                     title: {
                         display: true,
                         text: 'Investment Contribution vs. Goal',
-                        fontSize: 16, // Decreased font size for title
+                        fontSize: 14, // Adjusted font size for title
                         fontColor: '#1F2937', // Gray-900
-                        padding: 8 // Decreased padding for title
+                        padding: 6 // Adjusted padding for title
                     },
                     tooltips: {
                         callbacks: {
@@ -149,8 +149,8 @@
                                 return label;
                             }
                         },
-                        titleFontSize: 14, // Decreased font size for tooltip title
-                        bodyFontSize: 12 // Decreased font size for tooltip body
+                        titleFontSize: 12, // Adjusted font size for tooltip title
+                        bodyFontSize: 10 // Adjusted font size for tooltip body
                     }
                 }
             });
